@@ -32,8 +32,8 @@ RUN source $NVM_DIR/nvm.sh \
 ENV NODE_PATH $NVM_DIR/v$NODE_VERSION/lib/node_modules
 ENV PATH $NVM_DIR/versions/node/v$NODE_VERSION/bin:$PATH
 
-# ENV NODE_TLS_REJECT_UNAUTHORIZED 0
-# RUN npm install gulp -g
+# add gulp 
+RUN $NVM_DIR/versions/node/v$NODE_VERSION/bin/npm install gulp -g
 
 
 WORKDIR /opt
