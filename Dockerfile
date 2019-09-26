@@ -18,7 +18,7 @@ RUN mkdir /usr/local/nvm
  
 
 ENV NVM_DIR /usr/local/nvm 
-ENV NODE_VERSION 10.10
+ENV NODE_VERSION 10.10.0
  
 RUN curl --silent -o- https://raw.githubusercontent.com/creationix/nvm/v0.31.2/install.sh | bash
 
