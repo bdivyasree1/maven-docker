@@ -1,0 +1,1 @@
+docker build -t donhenton/maven-docker:exp .

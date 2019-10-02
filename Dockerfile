@@ -13,15 +13,15 @@ RUN apt-get update && \
 apt-get install -y git build-essential curl  wget software-properties-common zip unzip && \
 apt-get -y autoclean 
 
-RUN mkdir /usr/local/nvm
-
- 
+RUN mkdir /usr/local/nvm && mkdir -p /var/config
+VOLUME /var/config
 
 ENV NVM_DIR /usr/local/nvm 
 ENV NODE_VERSION 10.10
- 
+# -k for don't check ssl
 RUN curl --silent -o- https://raw.githubusercontent.com/creationix/nvm/v0.31.2/install.sh | bash
-
+#disable ssl check for nvm listings
+#ENV NVM_NODEJS_ORG_MIRROR http://nodejs.org/dist
 # install node and npm
 RUN source $NVM_DIR/nvm.sh \
     && nvm install $NODE_VERSION \
@@ -33,7 +33,7 @@ ENV NODE_PATH $NVM_DIR/v$NODE_VERSION/lib/node_modules
 ENV PATH $NVM_DIR/versions/node/v$NODE_VERSION/bin:$PATH
 
 # ENV NODE_TLS_REJECT_UNAUTHORIZED 0
-# RUN npm install gulp -g
+RUN npm install gulp -g
 
 
 WORKDIR /opt
