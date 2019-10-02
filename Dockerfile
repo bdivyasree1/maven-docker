@@ -17,7 +17,7 @@ RUN mkdir /usr/local/nvm && mkdir -p /var/config
 VOLUME /var/config
 
 ENV NVM_DIR /usr/local/nvm 
-ENV NODE_VERSION 10.10
+ENV NODE_VERSION 10.10.0
 # -k for don't check ssl
 RUN curl --silent -o- https://raw.githubusercontent.com/creationix/nvm/v0.31.2/install.sh | bash
 #disable ssl check for nvm listings
@@ -34,6 +34,7 @@ ENV PATH $NVM_DIR/versions/node/v$NODE_VERSION/bin:$PATH
 
 # ENV NODE_TLS_REJECT_UNAUTHORIZED 0
 RUN npm install gulp -g
+ 
 
 
 WORKDIR /opt
