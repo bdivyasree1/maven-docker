@@ -12,6 +12,6 @@ Using docker or docker-compose you can map the folder /var/config
 * Java 8
 * Node 10.10.0 (via nvm)
 * gulp
-* wget, curl
+* wget, curl,git
  
 
