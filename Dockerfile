@@ -38,7 +38,7 @@ RUN npm install gulp -g
 
 
 WORKDIR /opt
-RUN wget http://mirror.cc.columbia.edu/pub/software/apache/maven/maven-3/3.6.2/binaries/apache-maven-3.6.2-bin.tar.gz
-RUN tar -xvzf apache-maven-3.6.2-bin.tar.gz
-ENV M2_HOME /opt/apache-maven-3.6.2
-ENV PATH="/opt/apache-maven-3.6.2/bin:${PATH}"
+RUN wget http://mirror.cc.columbia.edu/pub/software/apache/maven/maven-3/3.6.3/binaries/apache-maven-3.6.3-bin.tar.gz
+RUN tar -xvzf apache-maven-3.6.3-bin.tar.gz
+ENV M2_HOME /opt/apache-maven-3.6.3
+ENV PATH="/opt/apache-maven-3.6.3/bin:${PATH}"
